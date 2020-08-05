@@ -295,8 +295,8 @@
 .form textarea {
     display: block;
     width: 100%;
-    padding: 0.4rem;
-    font-size: 1px solid #ccc;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
 }
 
 .form input[type="submit"] {
@@ -609,6 +609,9 @@ img {
     }
     .navbar h1 {
         margin-bottom: 1rem;
+    }
+    .dash-buttons{
+        display:flex;
     }
     .dash-buttons a {
         display: block;

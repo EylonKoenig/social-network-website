@@ -1,13 +1,17 @@
 import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import Spinner from '../layout/Spinner';
-import { getCurrentProfile } from '../../actions/profile';
 import { connect } from 'react-redux';
+
+import Spinner from '../layout/Spinner';
+import DashboardActions from "./DashboardActions";
+import { getCurrentProfile } from '../../actions/profile';
+
 
 const Dashboard = ({ getCurrentProfile, auth : {user}, profile:{ profile, loading } }) => {
     useEffect(() => {
         getCurrentProfile();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     return loading && profile  === null ? <Spinner/> : <Fragment>
@@ -16,7 +20,9 @@ const Dashboard = ({ getCurrentProfile, auth : {user}, profile:{ profile, loadin
             <i className="fas fa-user">{user &&'Welcome '+ user.name}</i>
         </p>
         { profile !== null ?
-            <Fragment> has </Fragment>
+            <Fragment>
+                <DashboardActions/>
+            </Fragment>
             :
             <Fragment>
                 <p>You have not yet setup a profile. please add some info</p>
