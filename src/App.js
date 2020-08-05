@@ -13,8 +13,9 @@ import Alert from './components/layout/Alert';
 import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
 import Dashboard from "./components/dashboard/Dashboard";
+import CreateProfile from "./components/profile-forms/CreateProfile";
 import PrivateRoute from "./components/routing/PrivateRoute";
-import CreateProfile from "./components/profile-forms/CreateProfile"
+
 
 if (localStorage.token){
   setAuthToken(localStorage.token);
